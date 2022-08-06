@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
@@ -7,6 +8,7 @@ public class Main {
     private static final List<String> shoppingList = new ArrayList<>();
     private static final Scanner sc = new Scanner(System.in);
     private static String s;
+//    private Iterator<String> iterator = shoppingList.iterator(); - Не пригодился
 
     public static void main(String[] args) {
         int selectedOption = -1;
@@ -48,7 +50,7 @@ public class Main {
         System.out.println("Какую хотите удалить? Введите номер или название");
         s = sc.nextLine();
         try {
-            index = Integer.parseInt(s);
+            index = Integer.parseInt(s) - 1;
         } catch (NumberFormatException e) {
             index = shoppingList.indexOf(s);
         }
